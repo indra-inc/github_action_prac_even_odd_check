@@ -3,9 +3,16 @@ import  uvicorn
 
 app = FastAPI()
 
-@app.get("/")
-def calculation(a: int,b: int):
+@app.get("/addition")
+def calculation_addition(a: int,b: int):
     if (a+b) % 2 == 0:
+        return "Even Number"
+    else:
+        return "Odd Number"
+    
+@app.get("/multiplication")
+def calculation_mul(a: int,b: int):
+    if (a*b) % 2 == 0:
         return "Even Number"
     else:
         return "Odd Number"
